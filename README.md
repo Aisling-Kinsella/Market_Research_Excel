@@ -2,10 +2,12 @@
 Price Elasticity and Product Demand Forecasting conducted on sales data in excel
 
 ![image](https://user-images.githubusercontent.com/131872943/236243902-478757fd-9d7f-42e6-bfad-de89c0db5795.png)
-Data is imported, cleaned and order totals calculated. Month number is extracted for use in later seasonality exploration.
+
+Data is imported, cleaned and order totals calculated. Month number is extracted for use in seasonality exploration.
 
 ![image](https://user-images.githubusercontent.com/131872943/236244239-f955806f-7ed8-4e69-8728-fd40863cbb52.png)
-Month number changed to month name in separate column for clarity in visualisation. There appears to be certain seasonal peaks September, December and January, with the largest peak in April. This will need to be taken into account when refining predictions. 
+
+The extracted month number is changed to month name in a separate column for clarity in visualisation. There appears to be certain seasonal peaks September, December and January, with the largest peak in April. This will need to be taken into account when refining predictions. 
 
 Unit Sales are calculated for two distinct products. 
 ![image](https://user-images.githubusercontent.com/131872943/236245026-fff37894-bd35-4f4b-969a-99e65e79dc98.png)
@@ -32,3 +34,12 @@ Using regression alone is of limited value, conveying what factors affect sales 
 The Regression tells us we can capture about 15% of the variation in units sold based simply on product_type, price and month. 
 The t-statistics in this regression tell us that product_type and price are statistically significant drivers of our units sold. 
 In Summary: Price and Product_Type are the important factors to take into account when sales forecasting. 
+
+Applying the Regression to conclude a forecast.
+<img width="1093" alt="image" src="https://user-images.githubusercontent.com/131872943/236249881-024745bd-8fca-44be-9f02-22f4186329af.png">
+
+What this tells us is that Product 2 has a negative unit demand of 28 sales relative to Product 1. 
+Having a price point of $9.99 has a negative impact of 34 unit sales. 
+The month has an impact of positive 4 sales. 
+
+The R-Squared value in this regression indicates that the regression is not going to be particularly accurate. More datapoints would increase accuracy metrics as in this instance we are only able to capture about 15% of the variation in our unit_sales. The confidence interval also has a wide relative range.  
